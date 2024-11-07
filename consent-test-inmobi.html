@@ -390,23 +390,24 @@
 		<!-- Banner -->
 			<section id="banner">
 				<div class="inner">
-					<h2>Consent Test with Cookie Yes</h2>
-					<p style="text-align: left;padding-right: 30px;padding-left: 80px;">A Consent Manager Platform (CMP), CookieYes, was implemented on this page without any further configurations.<br />
-					Before configuring the CMP and GTM, the tags firing on this page will be ignoring the consent given and the CMP won't correctly categorize the cookies in the page to show in the banner. The task is scanning the website with the CMP, blocking tags according to consent, and implementing consent mode.<br />
+					<h2>Consent Test with Inmobi</h2>
+					<p style="text-align: left;padding-right: 30px;padding-left: 80px;">A Consent Manager Platform (CMP), Inmobi, was implemented and configured on this page.<br />
+					Before configuring GTM, the tags firing on this page will be ignoring the consent given. The task is blocking tags according to consent, and implementing consent mode.<br />
 					There are also 3 buttons you can use to test datalayer events.<br /><br />
-					Configure the CMP<br />
-					1. Open the <a href="https://app.cookieyes.com/dashboard">Cookie Yes Dashboard</a> (use the analytics email to login) and scan this page to populate the cookie list in the banner.<br />
-					2. Look through the dashboard to familiarize yourself with the costumization options. Find and enable the datalayer/consent mode options so the CMP adds consent information to the datalayer.<br /><br />
-					Configure GTM<br />
-					3. Block all analytics and media tags to fire according to the consent given.<br />
-					4. Implement the basic implementation of consent mode.<br />
-					5. Implement the advanced implementation of consent mode with URL passthrough as granted and ads data redaction as denied.<br /><br />
+					Block Google and Media Tags in GTM<br />
+					1. Import the Inmobi GTM container (2.2.8 folder), with its tags and variables that enable sending consent information to the dataLayer.<br />
+					2. Block all analytics and media tags to fire according to the consent given.<br /><br />
+					Implement Consent Mode<br />
+					1. Open the <a href="https://choice.inmobi.com/protect/p-w7tmdxCVBCDuW/properties">InMobi Dashboard</a> (use the analytics email to login). Find and enable the consent mode options.<br />
+					2. Implement the basic implementation of consent mode.<br />
+					3. Implement the advanced implementation of consent mode with URL passthrough as granted and ads data redaction as denied.<br /><br />
 					To reset cookies, open devtools and go to Application > Storage and click on 'Clear site data' (don't include third party cookies).<br />
 					To check if consent mode is implemented on the page, paste the following code in the console: google_tag_data.ics.entries<br />
-					You can also find more guides and information on the 2.2.8 folder.</p>
+					You can also find more guides and information on the 2.2.8 folder.<br /><br />
+					Useful Links:<br />
+					<a href="https://support.inmobi.com/choice/how-to-guide/integrate-the-tag-or-sdk/site-implementation-tag/google-tag-manager-gtm-implementation">InMobi GTM Documentation</a></p>
 				</div>
 			</section>
-
 		<!-- Two -->
 			<section id="two" class="wrapper style2">
 				<div class="container">
