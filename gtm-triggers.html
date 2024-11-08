@@ -16,6 +16,7 @@
 		<script src="js/skel-layers.min.js"></script>
 		<script src="js/init.js"></script>
 		<script src="datalayer-events/ecommerce.js"></script>
+		<script src="datalayer-events/basic.js"></script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
@@ -67,12 +68,20 @@
 		<!-- Banner -->
 			<section id="banner">
 				<div class="inner">
-					<h2>Ecommerce Event Test</h2>
-					<p style="text-align: left;padding-right: 30px;padding-left: 80px;">In this page you can find 12 buttons, each firing a datalayer.push for the respective ecommerce event.<br />
-					Create the necessary tags, triggers and variables in GTM to send all ecommerce events to GA4.<br /><br />
+					<h2>Consent Test</h2>
+					<p style="text-align: left;padding-right: 30px;padding-left: 80px;">In this page there is a Consent Manager implemented (CookieYes).<br />
+					There are also 3 buttons you can use to test datalayer events.<br /><br />
+					1. Block all analytics and media tags to fire according to the consent given.<br />
+					2. Implement the basic implementation of consent mode.<br />
+					3. Implement the advanced implementation of consent mode.<br />
+					4. Set URL passthrough as granted and ads data redaction as denied.<br /><br />
+					To reset cookies, open devtools and go to Application > Storage and click on 'Clear site data' (don't include third party cookies).<br />
+					To check if consent mode is implemented on the page, paste the following code in the console: google_tag_data.ics.entries<br /><br />
 					Helpful Links:<br />
-					<a href="https://developers.google.com/analytics/devguides/collection/ga4/ecommerce"><span>Google GA4 Ecommerce Documentation</span></a><br />
-					<a href="https://www.simoahava.com/analytics/google-analytics-4-ecommerce-guide-google-tag-manager/"><span>Simo Ahava's Ecommerce Guide</span></a></p>
+					<a href="https://app.cookieyes.com/dashboard">Cookie Yes Dashboard</a>(use analytics email to login)<br />
+					You can also find more guides on the 2.2.8 folder.
+					
+					</p>
 				</div>
 			</section>
 
@@ -82,109 +91,28 @@
 					<div class="row uniform">
 						<div class="4u 6u(2) 12u$(3)">
 							<section class="feature fa-briefcase">
-								<h3>view_item_list</h3>
+								<h3>page_view</h3>
 								<p>Ipsum dolor tempus commodo amet sed accumsan et adipiscing blandit porttitor sed faucibus.</p>
 								<ul class="actions">
-									<li><button class="button" onclick="dl_view_item_list()">view_item_list</a></li>
+									<li><button class="button" onclick="dl_page_view()">page_view</a></li>
 								</ul>
 							</section>
 						</div>
 						<div class="4u 6u$(2) 12u$(3)">
 							<section class="feature fa-code">
-								<h3>select_item</h3>
+								<h3>test_event</h3>
 								<p>Ipsum dolor tempus commodo amet sed accumsan et adipiscing blandit porttitor sed faucibus.</p>
 								<ul class="actions">
-									<li><button class="button" onclick="dl_select_item()">select_item</a></li>
+									<li><button class="button" onclick="dl_test_event()">test_event</a></li>
 								</ul>
 							</section>
 						</div>
 						<div class="4u$ 6u(2) 12u$(3)">
 							<section class="feature fa-save">
-								<h3>view_item</h3>
+								<h3>conversion_event</h3>
 								<p>Ipsum dolor tempus commodo amet sed accumsan et adipiscing blandit porttitor sed faucibus.</p>
 								<ul class="actions">
-									<li><button class="button" onclick="dl_view_item()">view_item</a></li>
-								</ul>
-							</section>
-						</div>
-						<div class="4u 6u$(2) 12u$(3)">
-							<section class="feature fa-desktop">
-								<h3>add_to_cart</h3>
-								<p>Ipsum dolor tempus commodo amet sed accumsan et adipiscing blandit porttitor sed faucibus.</p>
-								<ul class="actions">
-									<li><button class="button" onclick="dl_add_to_cart()">add_to_cart</a></li>
-								</ul>
-							</section>
-						</div>
-						<div class="4u 6u(2) 12u$(3)">
-							<section class="feature fa-camera-retro">
-								<h3>add_to_wishlist</h3>
-								<p>Ipsum dolor tempus commodo amet sed accumsan et adipiscing blandit porttitor sed faucibus.</p>
-								<ul class="actions">
-									<li><button class="button" onclick="dl_add_to_wishlist()">add_to_wishlist</a></li>
-								</ul>
-							</section>
-						</div>
-						<div class="4u$ 6u$(2) 12u$(3)">
-							<section class="feature fa-cog">
-								<h3>view_cart</h3>
-								<p>Ipsum dolor tempus commodo amet sed accumsan et adipiscing blandit porttitor sed faucibus.</p>
-								<ul class="actions">
-									<li><button class="button" onclick="dl_view_cart()">view_cart</a></li>
-								</ul>
-							</section>
-						</div>
-						<div class="4u 6u(2) 12u$(3)">
-							<section class="feature fa-cog">
-								<h3>remove_from_cart</h3>
-								<p>Ipsum dolor tempus commodo amet sed accumsan et adipiscing blandit porttitor sed faucibus.</p>
-								<ul class="actions">
-									<li><button class="button" onclick="dl_remove_from_cart()">remove_from_cart</a></li>
-								</ul>
-							</section>
-						</div>
-						<div class="4u 6u$(2) 12u$(3)">
-							<section class="feature fa-cog">
-								<h3>begin_checkout</h3>
-								<p>Ipsum dolor tempus commodo amet sed accumsan et adipiscing blandit porttitor sed faucibus.</p>
-								<ul class="actions">
-									<li><button class="button" onclick="dl_begin_checkout()">begin_checkout</a></li>
-								</ul>
-							</section>
-						</div>
-						<div class="4u$ 6u$(2) 12u$(3)">
-							<section class="feature fa-cog">
-								<h3>add_shipping_info</h3>
-								<p>Ipsum dolor tempus commodo amet sed accumsan et adipiscing blandit porttitor sed faucibus.</p>
-								<ul class="actions">
-									<li><button class="button" onclick="dl_add_shipping_info()">add_shipping_info</a></li>
-								</ul>
-							</section>
-						</div>
-						<div class="4u 6u(2) 12u$(3)">
-							<section class="feature fa-cog">
-								<h3>add_payment_info</h3>
-								<p>Ipsum dolor tempus commodo amet sed accumsan et adipiscing blandit porttitor sed faucibus.</p>
-								<ul class="actions">
-									<li><button class="button" onclick="dl_add_payment_info()">add_payment_info</a></li>
-								</ul>
-							</section>
-						</div>
-						<div class="4u 6u$(2) 12u$(3)">
-							<section class="feature fa-cog">
-								<h3>purchase</h3>
-								<p>Ipsum dolor tempus commodo amet sed accumsan et adipiscing blandit porttitor sed faucibus.</p>
-								<ul class="actions">
-									<li><button class="button" onclick="dl_purchase()">purchase</a></li>
-								</ul>
-							</section>
-						</div>
-						<div class="4u$ 6u$(2) 12u$(3)">
-							<section class="feature fa-cog">
-								<h3>refund</h3>
-								<p>Ipsum dolor tempus commodo amet sed accumsan et adipiscing blandit porttitor sed faucibus.</p>
-								<ul class="actions">
-									<li><button class="button" onclick="dl_refund()">refund</a></li>
+									<li><button class="button" onclick="dl_conversion_event()">conversion_event</a></li>
 								</ul>
 							</section>
 						</div>

@@ -15,14 +15,13 @@
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
 		<script src="js/init.js"></script>
-		<script src="datalayer-events/basic.js"></script>
 		<script src="datalayer-events/ecommerce.js"></script>
+		<script src="datalayer-events/basic.js"></script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-xlarge.css" />
 		</noscript>
-		<!-- Start cookieyes banner --> <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/8d4e959aae6d03e2e027ed06/script.js"></script> <!-- End cookieyes banner -->
 		<!-- Google Tag Manager -->
 		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -68,20 +67,15 @@
 		<!-- Banner -->
 			<section id="banner">
 				<div class="inner">
-					<h2>Consent Test with Cookie Yes</h2>
-					<p style="text-align: left;padding-right: 30px;padding-left: 80px;">A Consent Manager Platform (CMP), CookieYes, was implemented on this page without any further configurations.<br />
-					Before configuring the CMP and GTM, the tags firing on this page will be ignoring the consent given and the CMP won't correctly categorize the cookies in the page to show in the banner. The task is scanning the website with the CMP, blocking tags according to consent, and implementing consent mode.<br />
-					There are also 3 buttons you can use to test datalayer events.<br /><br />
-					Configure the CMP<br />
-					1. Open the <a href="https://app.cookieyes.com/dashboard">Cookie Yes Dashboard</a> (use the analytics email to login) and scan this page to populate the cookie list in the banner.<br />
-					2. Look through the dashboard to familiarize yourself with the costumization options. Find and enable the datalayer/consent mode options so the CMP adds consent information to the datalayer.<br /><br />
-					Configure GTM<br />
-					3. Block all analytics and media tags to fire according to the consent given.<br />
-					4. Implement the basic implementation of consent mode.<br />
-					5. Implement the advanced implementation of consent mode with URL passthrough as granted and ads data redaction as denied.<br /><br />
-					To reset cookies, open devtools and go to Application > Storage and click on 'Clear site data' (don't include third party cookies).<br />
-					To check if consent mode is implemented on the page, paste the following code in the console: google_tag_data.ics.entries<br />
-					You can also find more guides and information on the 2.2.8 folder.</p>
+					<h2>GTM and GA4</h2>
+					<p style="text-align: left;padding-right: 30px;padding-left: 80px;">In this lesson you will learn the basics of GTM, how to create an analytics property and implement it in GTM, how to create a GA4 event and implement it on a link click, and how to test your implementation using GTM.<br /><br />
+					Enroll in the skillshop course (with your account) 
+					<a href="https://skillshop.docebosaas.com/learn/courses/8951/Data%20Capture%20with%20Sitewide%20Tagging">Data capture with sitewide tagging</a> and follow the first two lessons:<br />
+					1. Sitewide Tagging and Why You Need It <br />
+					2. Implementing Sitewide Tags Using Google Tag Manager<br /><br />
+					
+					For these tests use GA4 Account 'Acceleration Test' to create a new property and the GTM container 'Fake Website Test (2.2.3.1 folder)' to implement your tags. Both can be accessed with the shared analytics email.<br />
+					Use the buttons below for the exercises using click link triggers at the end of the second lesson .</p>
 				</div>
 			</section>
 
@@ -91,28 +85,28 @@
 					<div class="row uniform">
 						<div class="4u 6u(2) 12u$(3)">
 							<section class="feature fa-briefcase">
-								<h3>page_view</h3>
-								<p>Ipsum dolor tempus commodo amet sed accumsan et adipiscing blandit porttitor sed faucibus.</p>
+								<h3>Click Link Test 1</h3>
+								<p>Implement the first link click trigger (3rd video) on this button.</p>
 								<ul class="actions">
-									<li><button class="button" onclick="dl_page_view()">page_view</a></li>
+									<li><a href="gtm-triggers.html" class="button click-link-test">GTM Triggers</a></li>
 								</ul>
 							</section>
 						</div>
 						<div class="4u 6u$(2) 12u$(3)">
 							<section class="feature fa-code">
-								<h3>test_event</h3>
-								<p>Ipsum dolor tempus commodo amet sed accumsan et adipiscing blandit porttitor sed faucibus.</p>
+								<h3>Click Link Test 2</h3>
+								<p>Use this button for the last trigger using classes (5th video).</p>
 								<ul class="actions">
-									<li><button class="button" onclick="dl_test_event()">test_event</a></li>
+									<li><a href="media-tags.html" class="button click-link-test">Media Tags</a></li>
 								</ul>
 							</section>
 						</div>
 						<div class="4u$ 6u(2) 12u$(3)">
 							<section class="feature fa-save">
-								<h3>conversion_event</h3>
-								<p>Ipsum dolor tempus commodo amet sed accumsan et adipiscing blandit porttitor sed faucibus.</p>
+								<h3>Click Link Test 3</h3>
+								<p>Use this button for the last trigger using classes (5th video).</p>
 								<ul class="actions">
-									<li><button class="button" onclick="dl_conversion_event()">conversion_event</a></li>
+									<li><a href="ecommerce-test.html" class="button click-link-test">Ecommerce</a></li>
 								</ul>
 							</section>
 						</div>
